@@ -1,0 +1,73 @@
+#include<stdio.h>
+#define Size 5
+int stack[Size],top=-1;
+
+void push(int n){
+    if (top==Size-1){
+        printf("Stack overflow");
+        return;
+    }
+    else{
+            top++;
+        stack[top]=n;
+    }
+
+}
+int pop(){
+    int ele;
+    if(top==-1){
+        printf("Stack Underflow");
+        return -1;
+    }
+    else{
+        ele=stack[top];
+        top--;
+        return ele;
+    }
+}
+void display(){
+    for(int i=top; i>=0; i--){
+        printf("%d ",stack[i]);
+    }
+    if(top==-1){
+        printf("Nothing to display");
+
+    }
+}
+void main(){
+    int op;
+    printf("Enter the operation to perform:\n");
+
+    printf("1.Push\n");
+    printf("2.Pop\n");
+    printf("3.Display\n");
+    scanf("%d",&op);
+    while(op==1 || op==2 ||op==3){
+        switch(op){
+            int num;
+
+            case 1:
+                printf("Enter the number to push: ");
+                scanf("%d",&num);
+                push(num);
+                break;
+
+            case 2:
+                num=pop();
+                printf("%d is popped from stack\n",num);
+                break;
+
+            case 3:
+                display();
+                printf("Stack operation complete.");
+                exit(0);
+                break;
+        }
+         printf("Enter the operation to perform:\n");
+
+        printf("1.Push\n");
+        printf("2.Pop\n");
+        printf("3.Display\n");
+         scanf("%d",&op);
+    }
+}
