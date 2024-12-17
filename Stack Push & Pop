@@ -1,9 +1,9 @@
 #include<stdio.h>
-#define Size 5
-int stack[Size],top=-1;
+#define SIZE 5
+int stack[SIZE],top=-1;
 
 void push(int n){
-    if (top==Size-1){
+    if (top==SIZE-1){
         printf("Stack overflow");
         return;
     }
